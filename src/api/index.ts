@@ -1,5 +1,5 @@
 import type { AxiosProgressEvent, GenericAbortSignal } from 'axios'
-import { post } from '@/utils/request'
+import { post, get } from '@/utils/request'
 import { useAuthStore, useSettingStore } from '@/store'
 
 export function fetchChatAPI<T = any>(
@@ -57,7 +57,11 @@ export function fetchSession<T>() {
     url: '/session',
   })
 }
-
+export function aa<T>() {
+  return get<T>({
+    url: '/',
+  })
+}
 export function fetchVerify<T>(token: string) {
   return post<T>({
     url: '/verify',
