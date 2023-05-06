@@ -4,7 +4,7 @@ import { useAuthStore } from '@/store'
 const service = axios.create({
   baseURL: import.meta.env.VITE_GLOB_API_URL,
 })
-
+console.log(import.meta.env.VITE_GLOB_API_URL, 6666)
 service.interceptors.request.use(
   (config) => {
     const token = useAuthStore().token
